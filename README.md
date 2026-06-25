@@ -1,15 +1,44 @@
-Welcome to your new dbt project!
+# 🏠 Helsinki Metropolitan Area — Housing Affordability Analysis
 
-### Using the starter project
+An end-to-end analytics project analyzing housing affordability trends 
+across Helsinki, Espoo, and Vantaa using public data from Statistics Finland.
 
-Try running the following commands:
-- dbt run
-- dbt test
+---
 
+## 📌 Project Overview
 
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [chat](https://community.getdbt.com/) on Slack for live discussions and support
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+This project investigates whether housing in the Helsinki metropolitan area 
+is becoming less affordable over time by tracking the gap between housing 
+price growth and income growth since 2015.
+
+**Key Questions:**
+- How have housing prices and incomes grown since 2015?
+- Which postal codes are least affordable relative to local incomes?
+- Which areas show the highest gentrification risk?
+
+---
+
+## 🔧 Tech Stack
+
+| Layer | Tool |
+|---|---|
+| Data Ingestion | Statistics Finland PxWeb API + Python |
+| Data Storage | PostgreSQL |
+| Data Modeling | dbt |
+| Data Visualization | Power BI (Power Query + DAX) |
+
+---
+
+## 🗂️ Data Sources
+
+All data is publicly available from [Statistics Finland](https://www.stat.fi/en):
+
+| Dataset | Description | Coverage |
+|---|---|---|
+| Household Population | Number of households by postal code | 2015–2024 |
+| Median Income | Median income by postal code | 2015–2024 |
+| Housing Prices | Price per m² by postal code | 2015–2024 |
+
+---
+
+## 🏗️ Architecture
