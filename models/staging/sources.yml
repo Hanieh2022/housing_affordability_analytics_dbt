@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: raw
+    tables:
+      - name: household_population
+        description: "Number of households by postal code from Statistics Finland's Paavo dataset"
+
+      - name: income
+        description: "Median income of households by postal code from Statistics Finland's Paavo dataset"
+
+      - name: owned_house_price
+        description: "Price per square meter of owned houses by quarter and postal code across different building types from Statistics Finland's dataset"

@@ -1,0 +1,12 @@
+finnish_housing_analytics: 
+    target: dev
+    outputs:
+        dev:
+            type: postgres
+            host: localhost
+            user: postgres
+            password: Hanieh
+            port: 5432
+            dbname: finnish_housing_analytics
+            schema: analytics
+            threads: 4

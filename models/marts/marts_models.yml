@@ -1,0 +1,99 @@
+version: 2
+
+models:
+  - name: dim_location
+    description: "Unique postal code locations derived from all three sources"
+    columns:
+      - name: location_id
+        description: "Surrogate key generated from postal code"
+        tests: [unique, not_null]
+      - name: postal_code
+        description: "5-digit postal code"
+        tests: [unique, not_null]
+      - name: municipality
+        description: "Municipality name extracted from postal area column"
+        tests: [not_null]
+      - name: area_name
+        description: "Postal area name without code and municipality"
+        tests: [not_null]
+
+  - name: dim_date
+    description: "Year dimension derived from all three sources"
+    columns:
+      - name: date_id
+        description: "Year value acting as primary key"
+        tests: [unique, not_null]
+      - name: year
+        description: "Calendar year as integer"
+        tests: [not_null]
+
+  - name: fct_housing_metrics
+    description: "Core fact table joining households, income and price per postal code and year"
+    columns:
+      - name: metric_id
+        description: "Surrogate key generated from year and postal code"
+        tests: [unique, not_null]
+      - name: date_id
+        description: "Foreign key to dim_date"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_date')
+              field: date_id
+      - name: location_id
+        description: "Foreign key to dim_location"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_location')
+              field: location_id
+      - name: household_count
+        description: "Number of households per postal code and year"
+      - name: median_income
+        description: "Median income per postal code and year"
+      - name: avg_price_per_m2
+        description: "Average price per square meter. Nulls expected where no transactions were recorded"
+      - name: has_price_value
+        description: "Boolean flag. False where avg_price_per_m2 is null"
+
+  - name: rpt_housing_affordability
+    description: >
+      Reporting model for Power BI dashboard. Contains all key housing
+      affordability metrics calculated relative to 2015 baseline.
+    columns:
+      - name: year
+        description: "Calendar year"
+        tests: [not_null]
+      - name: postal_code
+        description: "5-digit postal code"
+        tests: [not_null]
+      - name: municipality
+        description: "Municipality name"
+      - name: area_name
+        description: "Postal area name"
+      - name: household_count
+        description: "Number of households per postal code and year"
+      - name: median_income
+        description: "Median income per postal code and year"
+      - name: avg_price_per_m2
+        description: "Average price per square meter. Nulls expected"
+      - name: has_price_value
+        description: "Boolean flag. False where avg_price_per_m2 is null"
+      - name: income_growth_vs_2015_pct
+        description: >
+          Percentage change in median income since 2015 baseline.
+          Null for years before 2015 or where 2015 baseline is missing.
+      - name: price_growth_vs_2015_pct
+        description: >
+          Percentage change in price per m² since 2015 baseline.
+          Null where price data is missing for 2015 or current year.
+      - name: price_income_growth_gap
+        description: >
+          Difference between price growth and income growth vs 2015.
+          Positive = prices grew faster than income (less affordable).
+          Negative = income grew faster than prices (more affordable).
+      - name: price_to_income_ratio
+        description: >
+          Price per m² divided by median income.
+          Higher values indicate lower affordability.
+          Null where price or income data is missing.

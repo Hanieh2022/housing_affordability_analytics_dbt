@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: stg_household_population
+    description: "Cleaned household population data"
+    columns:
+      - name: postal_code
+        tests: [not_null]
+      - name: year
+        tests: [not_null]
+
+  - name: stg_income
+    description: "Cleaned income data"
+    columns:
+      - name: postal_code
+        tests: [not_null]
+      - name: year
+        tests: [not_null]
+
+  - name: stg_owned_house_price
+    description: "Cleaned price per m² data."
+    columns:
+      - name: postal_code
+        tests: [not_null]
+      - name: year
+        tests: [not_null]
