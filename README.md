@@ -1,7 +1,8 @@
 # 🏠 Helsinki Metropolitan Area — Housing Affordability Analysis
 
 An end-to-end analytics project analyzing housing affordability trends 
-across Helsinki, Espoo, and Vantaa using public data from Statistics Finland.
+using public data from Statistics Finland, Built for urban planners and policy-makers 
+to identify affordability pressures and gentrification risk across the Helsinki metropolitan area.
 
 ---
 
@@ -44,9 +45,9 @@ All data is publicly available from [Statistics Finland](https://www.stat.fi/en)
 ## 📐 Data Model
 
 ### Star Schema
-dim_date
-             │
-             dim_location ────┼──── fct_housing_metrics
+
+dim_date ─────── fct_housing_metrics ─────── dim_location
+
 ### Layers
 
 | Layer | Models | Description |
@@ -60,7 +61,7 @@ dim_date
 ## 📊 Key Metrics
 
 | Metric | Definition |
-|---|---|
+|---|---| 
 | Income Growth vs 2015 | % change in median income since 2015 baseline |
 | Price Growth vs 2015 | % change in price per m² since 2015 baseline |
 | Affordability Gap | Price growth minus income growth since 2015 |
@@ -71,15 +72,6 @@ dim_date
 
 ## 📈 Dashboard
 
-The Power BI dashboard consists of 6 visuals:
-
-- **KPI Cards** — median income, price per m², price to income ratio (2024)
-- **Growth Cards** — income growth, price growth, affordability gap since 2015
-- **Dual Line Chart** — income vs price growth trends 2015–2024
-- **Map** — affordability level by postal code
-- **Bubble Scatter Plot** — income vs price per m² with population as bubble size
-- **Bar Chart** — top 10 postal codes at highest gentrification risk
-
-🔗 [View Live Dashboard](your_public_link_here)
+🔗 [View Live Dashboard](https://app.powerbi.com/reportEmbed?reportId=04f15f16-71d7-47ad-8aa1-ad6974d024e4&autoAuth=true&ctid=ae1a7724-4041-4462-a6dc-538cb199707e&actionBarEnabled=true)
 
 ---
