@@ -1,4 +1,4 @@
-# 🏠 Helsinki Metropolitan Area — Housing Affordability Analysis
+# Helsinki Metropolitan Area — Housing Affordability Analysis
 
 An end-to-end analytics project analyzing housing affordability trends 
 using public data from Statistics Finland, Built for urban planners and policy-makers 
@@ -6,7 +6,7 @@ to identify affordability pressures and gentrification risk across the Helsinki 
 
 ---
 
-## 📌 Project Overview
+## Project Overview
 
 This project investigates whether housing in the Helsinki metropolitan area 
 is becoming less affordable over time by tracking the gap between housing 
@@ -19,7 +19,7 @@ price growth and income growth since 2015.
 
 ---
 
-## 🔧 Tech Stack
+## Tech Stack
 
 | Layer | Tool |
 |---|---|
@@ -30,7 +30,7 @@ price growth and income growth since 2015.
 
 ---
 
-## 🗂️ Data Sources
+## Data Sources
 
 All data is publicly available from [Statistics Finland](https://www.stat.fi/en):
 
@@ -42,7 +42,7 @@ All data is publicly available from [Statistics Finland](https://www.stat.fi/en)
 
 ---
 
-## 📐 Data Model
+## Data Model
 
 ### Star Schema
 
@@ -58,7 +58,7 @@ dim_date ─────── fct_housing_metrics ─────── dim_loc
 
 ---
 
-## 📊 Key Metrics
+## Key Metrics
 
 | Metric | Definition |
 |---|---| 
@@ -70,7 +70,7 @@ dim_date ─────── fct_housing_metrics ─────── dim_loc
 
 ---
 
-## 📈 Dashboard
+## Dashboard
 
 🔗 [View Live Dashboard](https://app.powerbi.com/reportEmbed?reportId=04f15f16-71d7-47ad-8aa1-ad6974d024e4&autoAuth=true&ctid=ae1a7724-4041-4462-a6dc-538cb199707e&actionBarEnabled=true)
 
