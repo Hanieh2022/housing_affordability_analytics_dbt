@@ -1,7 +1,7 @@
 # Helsinki Metropolitan Area — Housing Affordability Analysis
 
 An end-to-end analytics project analyzing housing affordability trends 
-using public data from Statistics Finland, Built for urban planners and policy-makers 
+using public data from Statistics Finland, built for urban planners and policy-makers 
 to identify affordability pressures and gentrification risk across the Helsinki metropolitan area.
 
 ---
@@ -52,7 +52,7 @@ dim_date ─────── fct_housing_metrics ─────── dim_loc
 
 | Layer | Models | Description |
 |---|---|---|
-| **Staging** | stg_household, stg_income, stg_price | Raw data cleaning and type casting |
+| **Staging** | stg_household, stg_income, stg_price | Raw data cleaning and standardization using custom dbt macros |
 | **Marts** | dim_location, dim_date, fct_housing_metrics | Star schema fact and dimension tables |
 | **Reporting** | rpt_housing_affordability | Flattened reporting table with all KPIs |
 
