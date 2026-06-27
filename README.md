@@ -72,6 +72,6 @@ dim_date ─────── fct_housing_metrics ─────── dim_loc
 
 ## Dashboard
 
-🔗 [View Live Dashboard](https://app.powerbi.com/reportEmbed?reportId=04f15f16-71d7-47ad-8aa1-ad6974d024e4&autoAuth=true&ctid=ae1a7724-4041-4462-a6dc-538cb199707e&actionBarEnabled=true)
+![dashboard_screenshot](images/PowerBI_dashboard.png)
 
 ---
