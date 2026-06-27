@@ -75,7 +75,7 @@ dim_date ─────── fct_housing_metrics ─────── dim_loc
 The Power BI dashboard consists of 6 visuals:
 
 - **KPI Cards** — median income, price per m², price to income ratio (2024) / population-weighted
-- **Bubble Scatter Plot** — income vs price per m² with population as bubble size
+- **Bubble Scatter Plot** — income vs price per m² by postal code with population as bubble size
 - **Map** — price to income ratio by postal code with population as bubble size
 - **Growth Cards** — income growth, price growth, affordability gap since 2015 / population-weighted
 - **Dual Line Chart** — income vs price growth trends 2015–2024 / population-weighted
