@@ -32,7 +32,7 @@ price growth and income growth since 2015.
 
 ## Data Sources
 
-All data is publicly available from [Statistics Finland](https://www.stat.fi/en):
+All data is publicly available from Statistics Finland:
 
 | Dataset | Description | Coverage |
 |---|---|---|
